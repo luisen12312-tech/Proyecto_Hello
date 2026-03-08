@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Hello Kitty Pro</title>
+<h1>Te quiero mucho Magaly ❤️😻💞</h1><br>
+
+<style>
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:linear-gradient(135deg,#ffd9ec,#fff);
+font-family:Arial;
+}
+
+/* CONTENEDOR */
+
+.kitty{
+position:relative;
+animation:bounce 2s infinite ease-in-out;
+}
+
+/* CABEZA */
+
+.head{
+width:220px;
+height:180px;
+background:white;
+border-radius:60% 60% 55% 55%;
+border:4px solid black;
+position:relative;
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* OREJAS */
+
+.ear{
+width:70px;
+height:70px;
+background:white;
+border:4px solid black;
+position:absolute;
+top:-30px;
+border-radius:20px;
+}
+
+.ear.left{
+left:10px;
+transform:rotate(-30deg);
+}
+
+.ear.right{
+right:10px;
+transform:rotate(30deg);
+}
+
+/* OJOS */
+
+.eye{
+width:16px;
+height:26px;
+background:black;
+border-radius:50%;
+position:absolute;
+top:80px;
+}
+
+.eye.left{ left:65px;}
+.eye.right{ right:65px;}
+
+/* NARIZ */
+
+.nose{
+width:22px;
+height:15px;
+background:#ffcc00;
+border-radius:50%;
+position:absolute;
+top:100px;
+left:98px;
+}
+
+/* BIGOTES */
+
+.whisker{
+width:60px;
+height:3px;
+background:black;
+position:absolute;
+}
+
+.w1{top:90px;left:-55px;}
+.w2{top:105px;left:-60px;}
+.w3{top:120px;left:-55px;}
+
+.w4{top:90px;right:-55px;}
+.w5{top:105px;right:-60px;}
+.w6{top:120px;right:-55px;}
+
+/* MOÑO */
+
+.bow-center{
+width:22px;
+height:22px;
+background:red;
+border-radius:50%;
+position:absolute;
+top:15px;
+right:45px;
+}
+
+.bow-left,.bow-right{
+width:38px;
+height:34px;
+background:red;
+border-radius:50%;
+position:absolute;
+top:15px;
+}
+
+.bow-left{right:60px;}
+.bow-right{right:15px;}
+
+/* CUERPO */
+
+.body{
+width:140px;
+height:120px;
+background:#ff4d94;
+border-radius:50px;
+border:4px solid black;
+margin:auto;
+margin-top:-15px;
+box-shadow:0 10px 15px rgba(0,0,0,0.15);
+}
+
+/* BRAZOS */
+
+.arm{
+width:22px;
+height:70px;
+background:white;
+border:4px solid black;
+border-radius:20px;
+position:absolute;
+top:170px;
+}
+
+.arm.left{ left:-10px;}
+.arm.right{ right:-10px;}
+
+/* PIERNAS */
+
+.leg{
+width:22px;
+height:60px;
+background:white;
+border:4px solid black;
+border-radius:20px;
+position:absolute;
+top:270px;
+}
+
+.leg.left{ left:45px;}
+.leg.right{ right:45px;}
+
+/* ANIMACION CUERPO */
+
+@keyframes bounce{
+
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
+
+}
+
+/* ====== BAILE ====== */
+
+.kitty.dance{
+animation:dance 0.5s infinite;
+}
+
+@keyframes dance{
+
+0%{transform:rotate(-5deg)}
+50%{transform:rotate(5deg)}
+100%{transform:rotate(-5deg)}
+
+}
+
+/* ====== SALUDO ====== */
+
+.wave{
+animation:wave 0.6s infinite;
+transform-origin:top;
+}
+
+@keyframes wave{
+
+0%{transform:rotate(0deg)}
+50%{transform:rotate(-40deg)}
+100%{transform:rotate(0deg)}
+
+}
+
+/* BESO */
+
+.kiss{
+position:absolute;
+font-size:28px;
+top:120px;
+left:120px;
+opacity:0;
+}
+
+.kiss.fly{
+animation:kissFly 1.8s forwards;
+}
+
+@keyframes kissFly{
+
+0%{
+transform:translate(0,0) scale(1);
+opacity:1;
+}
+
+100%{
+transform:translate(180px,-150px) scale(1.6);
+opacity:0;
+}
+
+}
+
+/* CORAZONES */
+
+.heart{
+position:absolute;
+color:#ff4d88;
+font-size:20px;
+opacity:0;
+}
+
+.heart.fly{
+animation:heartFly 2s forwards;
+}
+
+@keyframes heartFly{
+
+0%{
+opacity:1;
+transform:scale(0.5);
+}
+
+100%{
+opacity:0;
+transform:translateY(-180px) scale(2);
+}
+
+}
+
+/* BOTONES */
+
+.controls{
+margin-top:40px;
+display:flex;
+gap:15px;
+}
+
+button{
+
+padding:12px 25px;
+background:#ff4d94;
+border:none;
+color:white;
+font-size:16px;
+border-radius:20px;
+cursor:pointer;
+transition:0.3s;
+
+}
+
+button:hover{
+transform:scale(1.1);
+background:#ff1a75;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="kitty" class="kitty">
+
+<div class="head">
+
+<div class="ear left"></div>
+<div class="ear right"></div>
+
+<div id="eyeL" class="eye left"></div>
+<div id="eyeR" class="eye right"></div>
+
+<div class="nose"></div>
+
+<div class="whisker w1"></div>
+<div class="whisker w2"></div>
+<div class="whisker w3"></div>
+
+<div class="whisker w4"></div>
+<div class="whisker w5"></div>
+<div class="whisker w6"></div>
+
+<div class="bow-left"></div>
+<div class="bow-right"></div>
+<div class="bow-center"></div>
+
+<div id="kiss" class="kiss">💋</div>
+
+<div id="heart1" class="heart">❤</div>
+<div id="heart2" class="heart">❤</div>
+<div id="heart3" class="heart">❤</div>
+
+</div>
+
+<div class="body"></div>
+
+<div class="arm left"></div>
+<div id="armRight" class="arm right"></div>
+
+<div class="leg left"></div>
+<div class="leg right"></div>
+
+</div>
+
+<div class="controls">
+
+<button onclick="beso()">💋 Besar</button>
+<button onclick="bailar()">💃 Bailar</button>
+<button onclick="saludar()">👋 Saludar</button>
+<button onclick="irGaleria()">🖼 Galería Hello Kitty</button>
+
+</div>
+
+<script>
+
+function beso(){
+
+let kiss=document.getElementById("kiss")
+
+kiss.classList.remove("fly")
+void kiss.offsetWidth
+kiss.classList.add("fly")
+
+let hearts=[
+document.getElementById("heart1"),
+document.getElementById("heart2"),
+document.getElementById("heart3")
+]
+
+hearts.forEach((h,i)=>{
+
+h.classList.remove("fly")
+
+h.style.left=(120+Math.random()*40)+"px"
+h.style.top=(120+Math.random()*20)+"px"
+
+void h.offsetWidth
+
+setTimeout(()=>{
+h.classList.add("fly")
+},i*200)
+
+})
+
+}
+
+/* BAILE */
+
+function bailar(){
+
+let kitty=document.getElementById("kitty")
+
+kitty.classList.toggle("dance")
+
+}
+
+/* SALUDO */
+
+function saludar(){
+
+let arm=document.getElementById("armRight")
+
+arm.classList.toggle("wave")
+
+}
+
+function irGaleria(){
+window.location.href="galeria.html"
+}
+
+</script>
+
+</body>
+</html>
